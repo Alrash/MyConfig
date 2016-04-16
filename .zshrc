@@ -78,6 +78,9 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+#android home
+export ANDROID_HOME=/opt/android-sdk
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -95,4 +98,7 @@ alias py=python
 alias "logout"=xfce4-session-logout
 alias chrome="google-chrome-stable"
 alias cleanh="dd if=/dev/null of=/home/lovelive/.zsh_history"
-alias gpom="git push origin master"
+alias gitpush="git push origin master"
+alias alrash="ssh -p 26202 lovelive@alrash.ga"
+alias runchrome="optirun google-chrome-stable"
+alias opennvidia="optirun nvidia-settings -c :8"
