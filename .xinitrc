@@ -6,6 +6,15 @@ export XMODIFIERS="@im=fcitx"
 
 numlockx on
 
+#myself
+#exec /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+if [ -d /etc/X11/xinit/xinitrc.d  ] ; then
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        [ -x "$f"  ] && . "$f"
+    done
+    unset f
+fi
+
 # fix broken $UID on some system...
 if test "x$UID" = "x"; then
   if test -x /usr/xpg4/bin/id; then
