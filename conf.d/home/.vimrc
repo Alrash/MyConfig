@@ -65,7 +65,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 " 使用空格代替制表符
-"set expandtab
+set noexpandtab
 " 在行和段开始处使用制表符
 set smarttab
 " 显示行号
@@ -103,7 +103,7 @@ nmap \ \cc
 vmap \ \cc
 
 "将tab替换为空格
-nmap tt :%s/\t/    /g<CR>
+"nmap tt :%s/\t/    /g<CR>
 
 
 
@@ -116,7 +116,7 @@ autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()"
 func SetTitle() 
 	"如果文件类型为.sh文件 
 	if &filetype == 'sh' 
-		call setline(1,"\#!/bin/bash") 
+		call setline(1,"\#!/bin/sh") 
 		call append(line("."), "") 
     elseif &filetype == 'python'
         call setline(1,"#!/usr/bin/env python")
@@ -292,8 +292,8 @@ filetype plugin on
 set clipboard+=unnamed 
 "自动保存
 set autowrite
-"set ruler                   " 打开状态栏标尺
-"set cursorline              " 突出显示当前行
+set ruler                   " 打开状态栏标尺
+set cursorline              " 突出显示当前行
 set magic                   " 设置魔术
 set guioptions-=T           " 隐藏工具栏
 set guioptions-=m           " 隐藏菜单栏
@@ -473,7 +473,7 @@ let g:ctrlp_extensions = ['funky']
 
 let NERDTreeIgnore=['\.pyc']
 
-
+"airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
