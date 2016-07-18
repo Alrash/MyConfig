@@ -10,9 +10,16 @@ wget http://www.alrash.ga/download/shadowsocks.zip &&
 
 #如果文件存在则配置shadowsocks，并设置开机启动
 if [ -f shadowsocks.json ]; then
-    echo "start shadowsocks"
-    sudo \cp shadowsocks.json /etc/shadowsocks/
+    echo -e "start shadowsocks\n"
+    echo "need modfiy config file?(y/n)"
+    read $NeedModfiy
+    if [ $NeedModfiy=="Y" ] || [ $NeedModfiy=="y" ]; then
+        vim shadowsocks.json
+    fi
+    sudo \mv shadowsocks.json /etc/shadowsocks/
     sudo systemctl start shadowsocks@shadowsocks
     sudo systemctl enable shadowsocks@shadowsocks
-    echo "ok, shadowsocks has started!"
+    echo -e "ok, shadowsocks has started!\n"
 fi
+
+rm -rf shadowsocks.zip
