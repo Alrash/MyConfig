@@ -1,9 +1,10 @@
 #!/bin/sh
 
 echo "get image viewer, chrome, music player, media player and so on"
-yaourt -S google-chrome ristretto gimp deadbeef shadowsocks vlc fcitx-im fcitx-configtool fcitx-googlepinyin wps-office ttf-wps-fonts breeze-snow-cursor-theme numix-themes-archblue-git
+yaourt -S google-chrome ristretto gimp deadbeef shadowsocks vlc fcitx-im fcitx-configtool fcitx-googlepinyin wps-office ttf-wps-fonts breeze-snow-cursor-theme numix-themes-archblue-git unzip zip unrar rar p7zip
 
 echo '' && echo 'get shadowsocks.json(need password)'
+#password 最长的那个
 wget http://www.alrash.ga/download/shadowsocks.zip &&
     echo "please input password to unzip" &&
     unzip shadowsocks.zip
